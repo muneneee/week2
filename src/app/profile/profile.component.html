@@ -1,8 +1,12 @@
-<div class="card" *ngFor="let user of users" style="width: 28rem;">
-    <img class="card-img-top" src="{{user.avatar_url}}">
-    <div class="card-body">
-        <h5 class="card-title">{{user.login}}</h5>
-        <p class="card-text">{{user.public_repos}}</p>
-        <a href="{{user.html_url}}" class="btn btn-primary">View in Github</a>
+<div class="container"> 
+   <div class="card-columns">
+        <div class="card" *ngFor="let user of users" style="width: 28rem;">
+            <img class="card-img-top" src="{{user.avatar_url}}">
+            <div class="card-body">
+                <h5 class="card-title">{{user.login}}</h5>
+                <p class="card-text">{{user.followers}}</p>
+                <a href="{{user.html_url}}" class="btn btn-primary">View in Github</a>
+            </div>
+        </div>
     </div>
 </div>
