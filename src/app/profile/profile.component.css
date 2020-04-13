@@ -7,3 +7,14 @@
   .primary {background-color: #2196F3;} /* Blue */
   .default {background-color: gray;} /* Orange */
   
+p {
+  font-family: 'Acme', sans-serif;
+}
+
+h4{
+  font-family: 'Acme', sans-serif;
+}
+
+h3{
+  font-family: 'Acme', sans-serif;
+}

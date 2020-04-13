@@ -1,13 +1,6 @@
-<div class="row">
-  <div class="col-md-12">
-    <form action="">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Github username then enter" [(ngModel)]="username" name="username" (keyup.enter)="findProfile()"> 
-      </div>
-    </form>
-  </div>
-</div>
-
+<h1 class="text-center" style="font-family: 'Acme', sans-serif;">GITHUB SEARCH</h1>
+<hr>
+<hr>
 <div *ngIf="user">
     <div class="panel panel-default">
         <div class="panel-heading">
