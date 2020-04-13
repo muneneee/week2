@@ -9,55 +9,38 @@
 </div>
 
 <div *ngIf="user">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">{{user.login}}</h3>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: 'Acme', sans-serif;">{{user.login}}</h5>
+          <p class="card-text">
+            <span class="badge badge-secondary" style="font-family: 'Acme', sans-serif;"> {{user.public_repos}} Repositories</span>
+            <span class="badge badge-primary" style="font-family: 'Acme', sans-serif;">Following {{user.following}}</span>
+            <span class="badge badge-success" style="font-family: 'Acme', sans-serif;">{{user.followers}} Followers</span>
+          </p>
         </div>
-        <div class="panel-body">
-          <div class="row">
-              <div class="col-md-2">
-                 <img class="img-thumbnail github-avatar"  src="{{user.avatar_url}}" >
-              </div>
-              <div class="col-md-8">
-                <div class="info">
-                  <span class="label default" style="margin-right: 5px;" style="font-family: 'Acme', sans-serif;">  {{user.public_repos}} Repositories  </span>
-                  <span class="label primary" style="margin-right: 5px;" style="font-family: 'Acme', sans-serif;">  {{user.following}} Following  </span>
-                  <span class="label success" style="margin-right: 5px;" style="font-family: 'Acme', sans-serif;">  {{user.followers}} Followers  </span>
-                  <hr>
-                  <a class="btn btn-primary" href="{{user.html_url}}" target="_blank" style="font-family: 'Acme', sans-serif;">View from Github</a>
-                </div>
-                <br>
-                <ul class="list-group">
-                  <li class="list-group-item-action">Email: <strong>{{user.email}}</strong></li>
-                  <li class="list-group-item-action">Member since: <strong>{{user.created_at|date}}</strong></li>
-                </ul>
-              </div>
-          </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="font-family: 'Acme', sans-serif;">Email: <strong>{{user.email}}</strong></li>
+            <li class="list-group-item" style="font-family: 'Acme', sans-serif;">Member since: <strong>{{user.created_at|date}}</strong></li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="btn btn-primary" href="{{user.html_url}}" style="font-family: 'Acme', sans-serif;">View in Github</a>
+        </div>
     </div>
     <hr>
     <hr>
-    <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Repositories</h3>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-12">
-                <div *ngFor= "let repo of repos">
-                  <div class="row">
-                    <div class="col-md-9">
-                      <h4><a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a></h4> 
-                      <p>{{repo.description}}</p>
-                    </div>
-                    <div class="col-md-3">
-
-                    </div>
-                  </div>
-                </div>
-              </div>
+    <div *ngFor= "let repo of repos">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header" style="font-family: 'Acme', sans-serif;">
+            Repositories
             </div>
-            <hr>
-          </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item" style="font-family: 'Acme', sans-serif;">
+                <a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
+                <p style="font-family: 'Acme', sans-serif;">{{repo.description}}</p>
+            </li>
+            
+            </ul>
         </div>
     </div>
 </div>
