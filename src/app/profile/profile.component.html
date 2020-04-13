@@ -9,9 +9,11 @@
                  <img class="img-thumbnail github-avatar"  src="{{user.avatar_url}}" >
               </div>
               <div class="col-md-8">
-                <span class="label label-default">{{user.public_repos}} Repositories</span>
-                <span class="label label-primary">Following {{user.following}}</span>
-                <span class="label label-success">{{user.followers}} Followers</span>
+                <span class="label default" style="margin-right: 5px;">  {{user.public_repos}} Repositories  </span>
+                <span class="label primary" style="margin-right: 5px;">  {{user.following}} Following  </span>
+                <span class="label success" style="margin-right: 5px;">  {{user.followers}} Followers  </span>
+                <hr>
+                <a class="btn btn-primary" href="{{user.html_url}}">View from Github</a>
               </div>
           </div>
         </div>

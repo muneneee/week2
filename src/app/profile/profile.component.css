@@ -1,0 +1,9 @@
+.label {
+    color: white;
+    padding: 8px;
+  }
+  
+  .success {background-color: #4CAF50;} /* Green */
+  .primary {background-color: #2196F3;} /* Blue */
+  .default {background-color: gray;} /* Orange */
+  
