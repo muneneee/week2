@@ -10,6 +10,7 @@ import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserComponent } from './user/user.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { UserComponent } from './user/user.component';
     ProfileComponent,
     NavbarComponent,
     UserComponent,
+    NotFoundComponent,
     
   
     
