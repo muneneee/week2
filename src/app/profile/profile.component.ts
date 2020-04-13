@@ -10,10 +10,12 @@ export class ProfileComponent implements OnInit {
 
 
   user:any;
+  repos:any;
   username:string;
 
   constructor(private profileService:ProfileService) { 
     console.log('github component');
+
 
   }
 
@@ -25,7 +27,9 @@ export class ProfileComponent implements OnInit {
       this.user = user;
     });
 
-  
+    this.profileService.getRepos().subscribe(repo =>{  
+      this.repos = repo;
+    });
   
   }
 
