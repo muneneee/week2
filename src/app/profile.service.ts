@@ -9,8 +9,8 @@ import { map } from 'rxjs/operators';
 export class ProfileService {
 
   private username = 'muneneee';
-  private client_id = '97629a10a4b83d65f143';
-  private client_secret ='4dc7ecdac521d116675477560f9fcb4b23122893';
+  private client_id = 'c888e98887e9abed04dd';
+  private client_secret ='27774024ffe4af2e0ac45a012cf9a8d71f4ce8e4';
 
   constructor(private http: HttpClient) {
     console.log('Github service');
@@ -26,6 +26,10 @@ export class ProfileService {
   getRepos(){
     return this.http.get('https://api.github.com/users/'+this.username+'/repos')
     .pipe(map(res => res ));
+  }
+
+  updateProfile(username:string){
+    this.username = username;
   }
 
 }

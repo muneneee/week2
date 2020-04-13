@@ -11,11 +11,17 @@ export class ProfileComponent implements OnInit {
 
   user:any;
   repos:any;
-  
+  username:string;
 
   constructor(private profileService:ProfileService) { 
     console.log('github component');
 
+  }
+
+  findProfile(){
+    console.log('inafanya')
+    this.profileService.updateProfile(this.username);
+  
     this.profileService.getUser().subscribe(user =>{
       this.user = user;
     });
@@ -23,7 +29,9 @@ export class ProfileComponent implements OnInit {
     this.profileService.getRepos().subscribe(repo =>{  
       this.repos = repo;
     });
+  
   }
+
 
   
 
