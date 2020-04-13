@@ -9,11 +9,18 @@
                  <img class="img-thumbnail github-avatar"  src="{{user.avatar_url}}" >
               </div>
               <div class="col-md-8">
-                <span class="label default" style="margin-right: 5px;">  {{user.public_repos}} Repositories  </span>
-                <span class="label primary" style="margin-right: 5px;">  {{user.following}} Following  </span>
-                <span class="label success" style="margin-right: 5px;">  {{user.followers}} Followers  </span>
-                <hr>
-                <a class="btn btn-primary" href="{{user.html_url}}">View from Github</a>
+                <div class="info">
+                  <span class="label default" style="margin-right: 5px;">  {{user.public_repos}} Repositories  </span>
+                  <span class="label primary" style="margin-right: 5px;">  {{user.following}} Following  </span>
+                  <span class="label success" style="margin-right: 5px;">  {{user.followers}} Followers  </span>
+                  <hr>
+                  <a class="btn btn-primary" href="{{user.html_url}}">View from Github</a>
+                </div>
+                <br>
+                <ul class="list-group">
+                  <li class="list-group-item">Email: <strong>{{user.email}}</strong></li>
+                  <li class="list-group-item">Member since: <strong>{{user.created_at}}</strong></li>
+                </ul>
               </div>
           </div>
         </div>

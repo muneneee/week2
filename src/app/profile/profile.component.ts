@@ -10,15 +10,18 @@ export class ProfileComponent implements OnInit {
 
 
   user:any;
-  
+  repos:any;
   
 
   constructor(private profileService:ProfileService) { 
     console.log('github component');
 
     this.profileService.getUser().subscribe(user =>{
-      //console.log(user);
       this.user = user;
+    });
+
+    this.profileService.getRepos().subscribe(repo =>{  
+      this.repos = repo;
     });
   }
 
