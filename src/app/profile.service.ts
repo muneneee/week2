@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs'
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
 
-  constructor(private http: HttpClient) { }
+  private username = 'muneneee';
+  private client_id = '97629a10a4b83d65f143';
+  private client_secret ='4dc7ecdac521d116675477560f9fcb4b23122893';
 
-getData():Observable<any> {
+  constructor(private http: HttpClient) {
+    console.log('Github service');
+  }
 
-  const url = "https://api.github.com/users"
 
-  return this.http.get<any>(url)
-}
+  getUser(){
+    return this.http.get('https://api.github.com/users/'+this.username)
+    .pipe(map(res => res ));
+  }
+    
 
 }

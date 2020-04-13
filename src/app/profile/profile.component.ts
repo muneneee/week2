@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, } from '@angular/core';
+import { ProfileService } from '../profile.service'
 
 @Component({
   selector: 'app-profile',
@@ -8,12 +8,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  @Input() users:string[]
 
+  user:any;
+  
+  
 
-  constructor() { }
+  constructor(private profileService:ProfileService) { 
+    console.log('github component');
 
-  ngOnInit(): void {
+    this.profileService.getUser().subscribe(user =>{
+      //console.log(user);
+      this.user = user;
+    });
+  }
+
+  
+
+  ngOnInit(){
   }
 
 }
