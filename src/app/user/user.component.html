@@ -2,31 +2,32 @@
 <hr>
 <hr>
 <div *ngIf="user">
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title" style="font-family: 'Acme', sans-serif;">{{user.login}}</h5>
-          <p class="card-text">
-            <span class="badge badge-secondary" style="font-family: 'Acme', sans-serif;"> {{user.public_repos}} Repositories</span>
-            <span class="badge badge-primary" style="font-family: 'Acme', sans-serif;">Following {{user.following}}</span>
-            <span class="badge badge-success" style="font-family: 'Acme', sans-serif;">{{user.followers}} Followers</span>
-          </p>
+    <div class="container">
+        <div class="card" style="width: 18rem; align-content: center;">
+            <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title" style="font-family: 'Acme', sans-serif;">{{user.login}}</h5>
+            <p class="card-text">
+                <span class="badge badge-secondary" style="font-family: 'Acme', sans-serif;"> {{user.public_repos}} Repositories</span>
+                <span class="badge badge-primary" style="font-family: 'Acme', sans-serif;">Following {{user.following}}</span>
+                <span class="badge badge-success" style="font-family: 'Acme', sans-serif;">{{user.followers}} Followers</span>
+            </p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="font-family: 'Acme', sans-serif;">Email: <strong>{{user.email}}</strong></li>
+                <li class="list-group-item" style="font-family: 'Acme', sans-serif;">Member since: <strong>{{user.created_at|date}}</strong></li>
+            </ul>
+            <div class="card-body">
+            <a  class="btn btn-primary" href="{{user.html_url}}" style="font-family: 'Acme', sans-serif;">View in Github</a>
+            </div>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item" style="font-family: 'Acme', sans-serif;">Email: <strong>{{user.email}}</strong></li>
-            <li class="list-group-item" style="font-family: 'Acme', sans-serif;">Member since: <strong>{{user.created_at|date}}</strong></li>
-        </ul>
-        <div class="card-body">
-          <a href="#" class="btn btn-primary" href="{{user.html_url}}" style="font-family: 'Acme', sans-serif;">View in Github</a>
-        </div>
-    </div>
-    <hr>
-    <hr>
-    <div *ngFor= "let repo of repos">
+        <hr>
+        <hr>
         <div class="card" style="width: 18rem;">
             <div class="card-header" style="font-family: 'Acme', sans-serif;">
             Repositories
             </div>
+            <div *ngFor= "let repo of repos">
             <ul class="list-group list-group-flush">
             <li class="list-group-item" style="font-family: 'Acme', sans-serif;">
                 <a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
@@ -34,6 +35,7 @@
             </li>
             
             </ul>
+            </div>
         </div>
     </div>
 </div>
