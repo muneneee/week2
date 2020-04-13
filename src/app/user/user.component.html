@@ -3,7 +3,7 @@
 <hr>
 <div *ngIf="user">
     <div class="container">
-        <div class="card" style="width: 18rem; align-content: center;">
+        <div class="card" style="width: 30rem; align-content: center;">
             <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
             <div class="card-body">
             <h5 class="card-title" style="font-family: 'Acme', sans-serif;">{{user.login}}</h5>
@@ -21,21 +21,26 @@
             <a  class="btn btn-primary" href="{{user.html_url}}" style="font-family: 'Acme', sans-serif;">View in Github</a>
             </div>
         </div>
+    </div>
+    <hr>
+    <div class="container"> 
         <hr>
         <hr>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 30rem;">
             <div class="card-header" style="font-family: 'Acme', sans-serif;">
             Repositories
             </div>
             <div *ngFor= "let repo of repos">
             <ul class="list-group list-group-flush">
-            <li class="list-group-item" style="font-family: 'Acme', sans-serif;">
-                <a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
-                <p style="font-family: 'Acme', sans-serif;">{{repo.description}}</p>
-            </li>
-            
+                <hr>
+                <li class="list-group-item" style="font-family: 'Acme', sans-serif;">
+                    <a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
+                    <p style="font-family: 'Acme', sans-serif;">{{repo.description}}</p>
+                </li>
+                <hr>
             </ul>
             </div>
+            
         </div>
     </div>
 </div>

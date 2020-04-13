@@ -1,5 +1,18 @@
 .container {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 27%;
+
+}
+h5{
+  font-size: 45px;
+}
+
+p{
+  font-size: 29px;
+}
+
+li{
+  font-size: 29px;
 }

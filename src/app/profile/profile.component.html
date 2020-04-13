@@ -10,7 +10,7 @@
 
 <div *ngIf="user">
   <div class="container">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 30rem;">
           <img class="card-img-top" src="{{user.avatar_url}}" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title" style="font-family: 'Acme', sans-serif;">{{user.login}}</h5>
@@ -30,18 +30,22 @@
       </div>
       <hr>
       <hr>
-      <div class="card" style="width: 18rem;">
+  </div>
+  <hr>
+  <div class="container">
+      <div class="card" style="width: 30rem;">
         <div class="card-header" style="font-family: 'Acme', sans-serif;">
         Repositories
         </div>
         <div *ngFor= "let repo of repos">
           <ul class="list-group list-group-flush">
-          <li class="list-group-item" style="font-family: 'Acme', sans-serif;">
-              <a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
-              <p style="font-family: 'Acme', sans-serif;">{{repo.description}}</p>
-          </li>
-          
+            <li class="list-group-item" style="font-family: 'Acme', sans-serif;">
+                <a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a>
+                <p style="font-family: 'Acme', sans-serif;">{{repo.description}}</p>
+            </li>
+            
           </ul>
+          
         </div>
     </div>
   </div>
