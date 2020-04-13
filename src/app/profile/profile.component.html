@@ -1,13 +1,4 @@
-<div class="row">
-  <div class="col-md-12">
-    <form action="">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Github username" [(ngModel)]="username" name="username" (keyup.enter)="findProfile()"> 
-      </div>
-    </form>
-  </div>
-</div>
-
+<app-search-form></app-search-form>
 <div *ngIf="user">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -36,28 +27,5 @@
     </div>
     <hr>
     <hr>
-    <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Repositories</h3>
-          </div>
-          <div class="panel-body">
-            <div class="row">
-              <div class="col-md-12">
-                <div *ngFor= "let repo of repos">
-                  <div class="row">
-                    <div class="col-md-9">
-                      <h4><a href="{{repo.html_url}}" target="_blank" >{{repo.name}}</a></h4> 
-                      <p>{{repo.description}}</p>
-                    </div>
-                    <div class="col-md-3">
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr>
-          </div>
-        </div>
-    </div>
+    <app-repos></app-repos>
 </div>
